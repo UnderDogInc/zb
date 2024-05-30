@@ -1,23 +1,23 @@
 <template>
   <div class="card">
     <div
-      v-if="card.image?.length"
+      v-if="props.card.image?.length"
       class="card__image"
-      :style="`background-image: url(${card.image})`"
+      :style="`background-image: url(${props.card.image})`"
     />
     <div
       class="card__info"
-      :class="card?.image === '' ? 'card-card__info--with-image' : ''"
+      :class="props.card?.image === '' ? 'card-card__info--with-image' : ''"
     >
       <div class="card__summary">
-        <AppDateCard :date="card.date" />
+        <AppDateCard :date="props.card.date" />
 
         <h3 class="card__title">
-          {{ card.name }}
+          {{ props.card.name }}
         </h3>
-        <p v-html="card.previewText" class="card__preview-text"/>
+        <p v-html="props.card.previewText" class="card__preview-text"/>
       </div>
-      <AppTag v-if="card.type?.value">{{ card.type.value }}</AppTag>
+      <AppTag v-if="props.card.type?.value">{{ props.card.type.value }}</AppTag>
     </div>
   </div>
 </template>
@@ -26,11 +26,13 @@
 import AppTag from "~/shared/ui/simpleBadge/SimpleBadge.vue";
 import AppDateCard from "~/shared/ui/SimpleDate/SimpleDate.vue";
 
-defineProps<{
-  card
-}>()
+const props = defineProps({
+  card: {
+    type: Object,
+    required: true
+  }
+});
 </script>
-
 <style scoped>
 .card {
   cursor: pointer;

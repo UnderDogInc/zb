@@ -4,6 +4,7 @@ export const routes = [
   {
     name: Routes.HOME,
     path: '/',
+    // @ts-ignore
     component: () => import('~/pages/cards/index.vue'),
     meta: { title: 'Home' }
   },
@@ -11,6 +12,6 @@ export const routes = [
     name: Routes.ARTICLE,
     path: '/card/:articleId',
     component: () => import('~/pages/card/index.vue'),
-    meta: { title: 'Article' }
+    meta: { title: 'Card' }
   },
 ]
