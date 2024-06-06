@@ -1,16 +1,16 @@
 <template>
   <div class="layout">
-    <Header />
+    <AppHeader />
     <div class="layout__content">
       <slot />
     </div>
-    <Footer />
+    <SystemAlert/>
   </div>
 </template>
 
-<script setup lang="ts">
-import { Header } from '../widgets/header'
-import { Footer } from '../widgets/footer'
+<script setup>
+import {AppHeader} from "../widgets/AppHeader";
+import {SystemAlert} from "~/feature/SystemAlert";
 </script>
 
 <style scoped>
