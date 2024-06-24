@@ -5,7 +5,7 @@ export const routes = [
     name: Routes.HOME,
     path: '/',
     // @ts-ignore
-    component: () => import('~/pages/search/index.vue'),
+    component: () => import('~/pages/table/index.vue'),
     meta: { title: 'Home' }
   },
 ]

@@ -25,7 +25,7 @@ const value = computed({
 .input {
   width: 100%;
   box-sizing: border-box;
-  padding: 16px;
+  padding: 10px;
   border: 1.5px solid var(--light-grey);
   color: var(--dark-grey-color);
   border-radius: 8px;

@@ -1,24 +1,20 @@
-export interface CardType {
-  value: string
-  xmlId: string
-}
-
-export interface Card {
-  code: string
-  date: number
-  image: string
-  link: string
+interface Column {
   name: string
-  previewText: string
-  type: CardType
+  title: string
+  sortable?: boolean
+}
+interface IPagination {
+  modelValue: number
+  count: number
+  isDisabled?: boolean
+}
+interface Item {
+  id: number
+  [key: string]: any
 }
 
-export interface Pagination {
-  current: number
-  total: number
-}
-
-export interface Response {
-  nav: Pagination
-  items: Card[]
+export type {
+  Item,
+  Column,
+  IPagination
 }
